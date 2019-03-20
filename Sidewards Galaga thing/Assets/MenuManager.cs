@@ -7,7 +7,9 @@ public class MenuManager : MonoBehaviour
 {
 	public void GoToGameMode()
 	{
-		SceneManager.LoadSceneAsync(1);
+		Camera.main.GetComponent<Animator>().SetBool("InBattle", true);
+
+		SceneManager.LoadSceneAsync(1, LoadSceneMode.Additive);
 		SceneManager.UnloadSceneAsync(0);
 	}
 }

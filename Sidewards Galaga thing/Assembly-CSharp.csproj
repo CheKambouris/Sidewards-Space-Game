@@ -73,16 +73,16 @@
     <Compile Include="Assets\Scripts\WallController.cs" />
     <Compile Include="Assets\Scripts\WallSpawner.cs" />
     <Reference Include="UnityEditor.StandardEvents">
-      <HintPath>C:/Users/ckambouris/Desktop/Sidewards Galaga thing/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
+      <HintPath>C:/Users/ckambouris/Documents/GitHub/Sidewards-Space-Game/Sidewards Galaga thing/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>C:/Users/ckambouris/Desktop/Sidewards Galaga thing/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>C:/Users/ckambouris/Documents/GitHub/Sidewards-Space-Game/Sidewards Galaga thing/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>C:/Users/ckambouris/Desktop/Sidewards Galaga thing/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+      <HintPath>C:/Users/ckambouris/Documents/GitHub/Sidewards-Space-Game/Sidewards Galaga thing/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:/Users/ckambouris/Desktop/Sidewards Galaga thing/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>C:/Users/ckambouris/Documents/GitHub/Sidewards-Space-Game/Sidewards Galaga thing/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Hub/2018.2.5f1/Editor/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>

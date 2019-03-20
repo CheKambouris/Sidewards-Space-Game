@@ -68,6 +68,7 @@
     <Compile Include="Assets\EnemySpawner.cs" />
     <Compile Include="Assets\ExplodeBehaviour.cs" />
     <Compile Include="Assets\KamiKazeBehaviour.cs" />
+    <Compile Include="Assets\MenuManager.cs" />
     <Compile Include="Assets\Scripts\EnemyController.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\WallController.cs" />

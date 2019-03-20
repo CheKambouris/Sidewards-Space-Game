@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour {
     Rigidbody2D m_rb;
     Vector2 m_input;
+
     public Vector2 MaxVelocity;
     public Vector2 Acceleration;
     public float SlowFactor = 0.5f;
@@ -32,10 +33,19 @@ public class PlayerMovement : MonoBehaviour {
 	}
     private void FixedUpdate()
     {
+		// Act on inputs
         float xVelocity = m_input.x * Acceleration.x * Time.fixedDeltaTime;
         float yVelocity = m_input.y * Acceleration.y * Time.fixedDeltaTime;
+		// Clamp velocity
         m_rb.velocity += new Vector2(
             Mathf.Clamp(xVelocity, -MaxVelocity.x - m_rb.velocity.x, MaxVelocity.x - m_rb.velocity.x), 
             Mathf.Clamp(yVelocity, -MaxVelocity.y - m_rb.velocity.y, MaxVelocity.y - m_rb.velocity.y));
+		// Get camera positions
+		Vector2 cameraBottomLeft = Camera.main.ViewportToWorldPoint(Vector3.zero);
+		Vector2 cameraTopRight = Camera.main.ViewportToWorldPoint(Vector3.right + Vector3.up);
+		// Clamp player to camera
+		transform.position = new Vector2
+			(Mathf.Clamp(transform.position.x, cameraBottomLeft.x, cameraTopRight.x),
+			Mathf.Clamp(transform.position.y, cameraBottomLeft.y, cameraTopRight.y));
     }
 }

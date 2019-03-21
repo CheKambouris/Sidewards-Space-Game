@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4084904352102370}
   - component: {fileID: 212886516267787416}
   - component: {fileID: 114664433721801254}
+  - component: {fileID: 114573976154370346}
   - component: {fileID: 61707011052025710}
   m_Layer: 0
   m_Name: Bullet
@@ -67,6 +68,23 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.65, y: 0.81}
   m_EdgeRadius: 0
+--- !u!114 &114573976154370346
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1355995971145772}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c88aed19c9c4d324284cdb0e24399982, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxHealth: 1
+  HurtTag: Player
+  ContactDamage: 1
+  DieOnContact: 1
+  Invincible: 0
+  HurtInvincibleTime: 0
 --- !u!114 &114664433721801254
 MonoBehaviour:
   m_ObjectHideFlags: 1

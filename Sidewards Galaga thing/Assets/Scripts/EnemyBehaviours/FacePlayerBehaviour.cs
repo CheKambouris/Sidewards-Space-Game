@@ -14,7 +14,7 @@ public class FacePlayerBehaviour : StateMachineBehaviour
 
 	override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
 	{
-		Vector2 target = GameObject.FindGameObjectWithTag("Player").transform.position;
+		Vector2 target = player.transform.position;
 		Vector2 dir = target - (Vector2)animator.gameObject.transform.position;
 		float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg - 90;
 

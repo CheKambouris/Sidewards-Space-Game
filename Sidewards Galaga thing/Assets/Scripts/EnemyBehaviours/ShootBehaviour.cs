@@ -2,14 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShootBehaviour : StateMachineBehaviour {
-
-	private GameObject player;
+public class ShootBehaviour : StateMachineBehaviour
+{
 	public GameObject bullet;
 
 	override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
 	{
-		player = GameObject.FindGameObjectWithTag("Player");
 		Instantiate(bullet, animator.transform.position, animator.transform.rotation);
 	}
 

@@ -7,7 +7,7 @@ public class HealthScript : MonoBehaviour
 {
 	public int MaxHealth;
 	[Tooltip("The tag of objects that hurt this on collision")]
-	public string HurtTag;
+	public string[] TagsThatHurt;
 	public int ContactDamage = 1;
 	public bool DieOnContact = false;
 	public bool Invincible = false;
@@ -35,7 +35,13 @@ public class HealthScript : MonoBehaviour
 	}
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
-		if (collision.gameObject.tag != HurtTag || Invincible) return;
+		bool tagFound = false;
+		foreach (string tag in TagsThatHurt)
+		{
+			if (collision.gameObject.tag == tag || Invincible) tagFound = true;
+		}
+		if (!tagFound) return;
+
 		if (DieOnContact)
 		{
 			Die();
@@ -43,6 +49,10 @@ public class HealthScript : MonoBehaviour
 		HealthScript healthScript = collision.gameObject.GetComponent<HealthScript>();
 		CurrentHealth -= healthScript != null ? healthScript.ContactDamage : 1;
 		StartCoroutine(InvinciblePeriod(HurtInvincibleTime));
+	}
+	private void OnCollisionEnter2D(Collision2D collision)
+	{
+		OnTriggerEnter2D(collision.collider);
 	}
 
 	private IEnumerator InvinciblePeriod(float time)

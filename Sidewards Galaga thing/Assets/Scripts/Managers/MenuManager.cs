@@ -5,11 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
+
 	public void GoToGameMode()
 	{
 		Camera.main.GetComponent<Animator>().SetBool("InBattle", true);
-
+		
 		SceneManager.LoadSceneAsync(1, LoadSceneMode.Additive);
-		SceneManager.UnloadSceneAsync(0);
+		SceneManager.UnloadSceneAsync(gameObject.scene);
 	}
 }

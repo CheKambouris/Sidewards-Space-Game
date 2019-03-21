@@ -147,7 +147,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.04111784, g: 0.7924528, b: 0.08413232, a: 0}
+  m_BackGroundColor: {r: 0, g: 0.5013052, b: 0.754717, a: 0}
   m_projectionMatrixMode: 1
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
@@ -4839,10 +4839,11 @@ GameObject:
   - component: {fileID: 805654712}
   - component: {fileID: 805654711}
   - component: {fileID: 805654710}
-  - component: {fileID: 805654709}
-  - component: {fileID: 805654708}
+  - component: {fileID: 805654715}
   - component: {fileID: 805654713}
   - component: {fileID: 805654714}
+  - component: {fileID: 805654709}
+  - component: {fileID: 805654708}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -4994,6 +4995,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 805654707}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96ec1dd0068e1ac478252c52c6d2d4c4, type: 3}
+  m_Script: {fileID: 11500000, guid: b2481a85c357d964588854f655702a76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &805654715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 805654707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c88aed19c9c4d324284cdb0e24399982, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxHealth: 3
+  HurtTag: Enemy
+  ContactDamage: 1
+  DieOnContact: 0
+  Invincible: 0
+  HurtInvincibleTime: 1

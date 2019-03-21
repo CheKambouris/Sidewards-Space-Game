@@ -123,6 +123,7 @@ GameObject:
   - component: {fileID: 262569454}
   - component: {fileID: 262569455}
   - component: {fileID: 262569456}
+  - component: {fileID: 262569457}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -173,3 +174,14 @@ MonoBehaviour:
   SpawnFrequency: 3
   EnemyPrefab: {fileID: 1488808744986400, guid: abe51e33e90f08a4d98e631bae47f55c,
     type: 2}
+--- !u!114 &262569457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 262569453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18e014094ab9f89429aab67ee98cbdd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

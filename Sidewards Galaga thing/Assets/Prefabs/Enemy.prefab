@@ -22,9 +22,10 @@ GameObject:
   - component: {fileID: 212547952466822322}
   - component: {fileID: 95984019337470088}
   - component: {fileID: 61004609313065344}
+  - component: {fileID: 114982280108715064}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -85,6 +86,23 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114982280108715064
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1488808744986400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c88aed19c9c4d324284cdb0e24399982, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxHealth: 3
+  HurtTag: Player
+  ContactDamage: 1
+  DieOnContact: 0
+  Invincible: 0
+  HurtInvincibleTime: 0.5
 --- !u!212 &212547952466822322
 SpriteRenderer:
   m_ObjectHideFlags: 1

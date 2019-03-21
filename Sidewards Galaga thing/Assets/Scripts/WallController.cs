@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WallController : MonoBehaviour {
+public class WallController : MonoBehaviour
+{
     [Header("Wall Parts")]
     public GameObject top;
     public GameObject bottom;

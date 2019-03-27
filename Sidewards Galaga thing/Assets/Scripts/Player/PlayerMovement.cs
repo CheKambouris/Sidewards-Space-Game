@@ -4,8 +4,9 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerMovement : MonoBehaviour
 {
-	public bool IsAllowedToMove { get; set; }
-    Rigidbody2D m_rb;
+	public bool CanMove { get; set; }
+	public bool CanShoot { get; set; }
+	Rigidbody2D m_rb;
     Vector2 m_input;
 
     public Vector2 MaxVelocity;
@@ -14,12 +15,16 @@ public class PlayerMovement : MonoBehaviour
 
     private void Start()
     {
-		IsAllowedToMove = true;
+		CanMove = true;
         m_rb = GetComponent<Rigidbody2D>();
     }
     void Update ()
     {
-		if (!IsAllowedToMove) return;
+		if (!CanMove)
+		{
+			m_input = Vector2.zero;
+			return;
+		}
 
 		Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 		transform.up = mousePosition - (Vector2)transform.position;

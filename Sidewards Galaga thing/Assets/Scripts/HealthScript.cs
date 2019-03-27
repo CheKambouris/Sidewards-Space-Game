@@ -67,6 +67,6 @@ public class HealthScript : MonoBehaviour
 
 	private void Die()
 	{
-		GameManager.Kill(gameObject);
+		MainManager.CurrentManager.Kill(gameObject);
 	}
 }

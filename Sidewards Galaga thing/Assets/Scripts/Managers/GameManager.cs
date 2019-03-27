@@ -6,19 +6,19 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+	public static GameManager gameManager;
+
 	private void Start()
 	{
-		SceneManager.SetActiveScene(gameObject.scene);
+		gameManager = this;
 	}
 
-	public static void Kill(GameObject gameObject)
+	public void Kill(GameObject gameObject)
 	{
 		if(gameObject.tag == "Player")
 		{
-			gameObject.GetComponent<PlayerMovement>().IsAllowedToMove = false;
+			gameObject.GetComponent<PlayerMovement>().CanMove = false;
 			gameObject.GetComponent<Animator>().SetBool("Dead", true);
-			SceneManager.LoadSceneAsync(2, LoadSceneMode.Additive); // Death Scene
-			SceneManager.UnloadSceneAsync(1); // Unload Game Scene
 			return;
 		}
 		Destroy(gameObject);

@@ -6,13 +6,16 @@ using UnityEngine;
 public class HealthScript : MonoBehaviour
 {
 	public int MaxHealth;
+	public float HurtInvincibleTime;
 	[Tooltip("The tag of objects that hurt this on collision")]
 	public string[] TagsThatHurt;
 	public int ContactDamage = 1;
 	public bool DieOnContact = false;
 	public bool Invincible = false;
-	public float HurtInvincibleTime;
+	public bool WaitForDeathAnimation = true;
 	private int m_currentHealth;
+	private Animator m_animator;
+
 	public int CurrentHealth
 	{ 
 		get
@@ -24,7 +27,7 @@ public class HealthScript : MonoBehaviour
 			m_currentHealth = value;
 			if (m_currentHealth <= 0 && !Invincible)
 			{
-				Die();
+				StartCoroutine(Die());
 			}
 		}
 	}
@@ -32,19 +35,24 @@ public class HealthScript : MonoBehaviour
 	private void Start()
 	{
 		CurrentHealth = MaxHealth;
+		m_animator = GetComponent<Animator>();
 	}
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
 		bool tagFound = false;
 		foreach (string tag in TagsThatHurt)
 		{
-			if (collision.gameObject.tag == tag || Invincible) tagFound = true;
+			if (collision.gameObject.tag == tag || Invincible)
+			{
+				tagFound = true;
+				break;
+			}
 		}
 		if (!tagFound) return;
 
 		if (DieOnContact)
 		{
-			Die();
+			StartCoroutine(Die());
 		}
 		HealthScript healthScript = collision.gameObject.GetComponent<HealthScript>();
 		CurrentHealth -= healthScript != null ? healthScript.ContactDamage : 1;
@@ -59,14 +67,18 @@ public class HealthScript : MonoBehaviour
 	{
 		if (time == 0) yield break;
 		Invincible = true;
-		GetComponent<Animator>().SetBool("Invincible", true);
+		if(m_animator)m_animator.SetBool("Invincible", true);
 		yield return new WaitForSeconds(time);
-		GetComponent<Animator>().SetBool("Invincible", false);
+		if(m_animator)m_animator.SetBool("Invincible", false);
 		Invincible = false;
 	}
 
-	private void Die()
+	private IEnumerator Die()
 	{
+		if(m_animator)m_animator.SetTrigger("Die");
+		yield return new WaitForEndOfFrame();
+		if(WaitForDeathAnimation)
+			yield return new WaitForSeconds(m_animator.GetCurrentAnimatorClipInfo(0)[0].clip.length);
 		MainManager.CurrentManager.Kill(gameObject);
 	}
 }

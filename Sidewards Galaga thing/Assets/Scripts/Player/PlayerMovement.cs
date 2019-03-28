@@ -5,7 +5,6 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
 	public bool CanMove { get; set; }
-	public bool CanShoot { get; set; }
 	Rigidbody2D m_rb;
     Vector2 m_input;
 

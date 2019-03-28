@@ -388,31 +388,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8937e5295c894e346836dabd10aff624, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deathEvents:
+  playerDeathEvents:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1829084116}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 596314600}
-        m_MethodName: DestroyChildren
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
       - m_Target: {fileID: 596314602}
         m_MethodName: set_enabled
         m_Mode: 6
@@ -427,6 +405,28 @@ MonoBehaviour:
       - m_Target: {fileID: 596314601}
         m_MethodName: set_enabled
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1829084116}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 596314600}
+        m_MethodName: DestroyChildren
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -5259,13 +5259,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxHealth: 3
+  HurtInvincibleTime: 1
   TagsThatHurt:
   - Enemy
   - Wall
   ContactDamage: 1
   DieOnContact: 0
   Invincible: 0
-  HurtInvincibleTime: 1
+  WaitForDeathAnimation: 1
 --- !u!114 &805654716
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5365,6 +5366,7 @@ GameObject:
   - component: {fileID: 1428060681}
   - component: {fileID: 1428060680}
   - component: {fileID: 1428060679}
+  - component: {fileID: 1428060682}
   m_Layer: 5
   m_Name: Play Button
   m_TagString: Untagged
@@ -5495,7 +5497,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5510,6 +5512,24 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1428060677}
   m_CullTransparentMesh: 0
+--- !u!95 &1428060682
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1428060677}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 92898f0725e891c4f8b672f048b19acc, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1829084116
 GameObject:
   m_ObjectHideFlags: 0
@@ -5709,6 +5729,7 @@ GameObject:
   - component: {fileID: 2046724075}
   - component: {fileID: 2046724074}
   - component: {fileID: 2046724073}
+  - component: {fileID: 2046724076}
   m_Layer: 5
   m_Name: Reload Button
   m_TagString: Untagged
@@ -5821,3 +5842,21 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2046724071}
   m_CullTransparentMesh: 0
+--- !u!95 &2046724076
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2046724071}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 92898f0725e891c4f8b672f048b19acc, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

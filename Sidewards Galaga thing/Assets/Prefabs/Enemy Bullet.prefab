@@ -101,13 +101,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxHealth: 1
+  HurtInvincibleTime: 0
   TagsThatHurt:
   - Player
   - PlayerBullet
   ContactDamage: 1
   DieOnContact: 1
   Invincible: 0
-  HurtInvincibleTime: 0
+  WaitForDeathAnimation: 0
 --- !u!114 &114664433721801254
 MonoBehaviour:
   m_ObjectHideFlags: 1

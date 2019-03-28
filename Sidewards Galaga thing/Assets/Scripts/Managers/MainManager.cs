@@ -7,7 +7,7 @@ using UnityEngine.Events;
 public class MainManager : MonoBehaviour
 {
 	public static MainManager CurrentManager;
-	public UnityEvent deathEvents;
+	public UnityEvent playerDeathEvents;
 
 	private void Start()
 	{
@@ -18,9 +18,7 @@ public class MainManager : MonoBehaviour
 	{
 		if (gameObject.tag == "Player")
 		{
-			gameObject.GetComponent<PlayerMovement>().CanMove = false;
-			gameObject.GetComponent<Animator>().SetBool("Dead", true);
-			deathEvents.Invoke();
+			playerDeathEvents.Invoke();
 			return;
 		}
 		Destroy(gameObject);

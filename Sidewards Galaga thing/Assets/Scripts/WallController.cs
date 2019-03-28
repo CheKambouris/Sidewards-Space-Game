@@ -14,12 +14,12 @@ public class WallController : MonoBehaviour
         get { return space; }
         set
         {
-            Vector3 newTopPos = top.transform.position;
+            Vector3 newTopPos = top.transform.localPosition;
             newTopPos.y = value / 2;
-            top.transform.position = newTopPos;
-            Vector3 newBottomPos = bottom.transform.position;
+            top.transform.localPosition = newTopPos;
+            Vector3 newBottomPos = bottom.transform.localPosition;
             newBottomPos.y = -value / 2;
-            bottom.transform.position = newBottomPos;
+            bottom.transform.localPosition = newBottomPos;
             space = value;
         }
     }

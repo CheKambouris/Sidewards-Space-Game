@@ -20,9 +20,17 @@ public class MainManager : MonoBehaviour
 		{
 			gameObject.GetComponent<PlayerMovement>().CanMove = false;
 			gameObject.GetComponent<Animator>().SetBool("Dead", true);
+			deathEvents.Invoke();
 			return;
 		}
 		Destroy(gameObject);
+	}
+	public void DestroyChildren()
+	{
+		for(int i = 0;  i < transform.childCount; i++)
+		{
+			Destroy(transform.GetChild(i).gameObject);
+		}
 	}
 	public void Reload()
 	{

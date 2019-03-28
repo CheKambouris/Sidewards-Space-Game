@@ -20,7 +20,7 @@ public class WallSpawner : MonoBehaviour {
         if (timeToNextWall <= 0f)
         {
             #region Create wall then set all position and speed variables
-            GameObject wall = Instantiate(wallPrefab.gameObject, Vector3.zero, Quaternion.identity);
+            GameObject wall = Instantiate(wallPrefab.gameObject, transform);
             var wallController = wall.GetComponent<WallController>();
             wallController.Space = wallSpace;
             Vector3 wallPosition = Camera.main.ViewportToWorldPoint(new Vector3(1, 0, 0));

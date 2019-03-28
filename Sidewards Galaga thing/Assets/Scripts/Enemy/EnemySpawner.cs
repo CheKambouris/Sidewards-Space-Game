@@ -22,7 +22,7 @@ public class EnemySpawner : MonoBehaviour
 		spawnTimer -= Time.deltaTime;
 		if(spawnTimer < 0)
 		{
-			Instantiate(EnemyPrefab);
+			Instantiate(EnemyPrefab, transform);
 			spawnTimer = SpawnFrequency;
 		}
 	}

@@ -579,6 +579,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 596314599}
+  - component: {fileID: 596314604}
   - component: {fileID: 596314600}
   - component: {fileID: 596314602}
   - component: {fileID: 596314601}
@@ -613,10 +614,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8937e5295c894e346836dabd10aff624, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreFileName: highscores.txt
-  DefaultName: Unidentified player
-  NameField: {fileID: 2073223128}
-  ScoreText: {fileID: 453148869}
   playerDeathEvents:
     m_PersistentCalls:
       m_Calls:
@@ -664,7 +661,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 596314600}
+      - m_Target: {fileID: 596314604}
         m_MethodName: ShowScores
         m_Mode: 1
         m_Arguments:
@@ -688,6 +685,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  timer: 0
 --- !u!114 &596314601
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -718,6 +716,21 @@ MonoBehaviour:
   wallSpawnRate: 5
   wallSpace: 4
   wallSpeed: 5
+--- !u!114 &596314604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 596314598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 537240a1f5b002d4cb62f375debf0f4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreFileName: highscores.txt
+  DefaultName: Unidentified player
+  NameField: {fileID: 2073223128}
+  ScoreText: {fileID: 453148869}
 --- !u!1 &663733327
 GameObject:
   m_ObjectHideFlags: 0
@@ -6229,7 +6242,7 @@ GameObject:
   - component: {fileID: 2046724073}
   - component: {fileID: 2046724076}
   m_Layer: 5
-  m_Name: Reload Button
+  m_Name: Score Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6293,7 +6306,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 596314600}
+      - m_Target: {fileID: 596314604}
         m_MethodName: UpdateScores
         m_Mode: 1
         m_Arguments:
@@ -6304,7 +6317,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 596314600}
+      - m_Target: {fileID: 596314604}
         m_MethodName: ShowScores
         m_Mode: 1
         m_Arguments:

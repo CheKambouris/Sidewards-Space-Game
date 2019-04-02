@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HealthScript : MonoBehaviour
 {
@@ -13,6 +14,8 @@ public class HealthScript : MonoBehaviour
 	public bool DieOnContact = false;
 	public bool Invincible = false;
 	public bool WaitForDeathAnimation = true;
+	public bool UseHealthbar = false;
+	public Image Healthbar;
 	private int m_currentHealth;
 	private Animator m_animator;
 
@@ -56,6 +59,8 @@ public class HealthScript : MonoBehaviour
 		}
 		HealthScript healthScript = collision.gameObject.GetComponent<HealthScript>();
 		CurrentHealth -= healthScript != null ? healthScript.ContactDamage : 1;
+		if (UseHealthbar)
+			Healthbar.fillAmount = (float)m_currentHealth / MaxHealth;
 		StartCoroutine(InvinciblePeriod(HurtInvincibleTime));
 	}
 	private void OnCollisionEnter2D(Collision2D collision)

@@ -10,7 +10,6 @@ public class PlayerMovement : MonoBehaviour
 
     public Vector2 MaxVelocity;
     public Vector2 Acceleration;
-	public float SlowFactor = 0.5f;
 
     private void Start()
     {
@@ -29,16 +28,6 @@ public class PlayerMovement : MonoBehaviour
 		transform.up = mousePosition - (Vector2)transform.position;
 
         m_input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
-        if (Input.GetButtonDown("Slow"))
-        {
-            Time.timeScale = SlowFactor;
-            Time.fixedDeltaTime *= SlowFactor;
-        }
-        if(Input.GetButtonUp("Slow"))
-        {
-            Time.timeScale = 1f;
-			Time.fixedDeltaTime /= SlowFactor;
-        }
 	}
     private void FixedUpdate()
     {

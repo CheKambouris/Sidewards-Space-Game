@@ -14,8 +14,7 @@ public class HighScoreManager : MonoBehaviour
 	public string DefaultName = "Unidentified player";
 	public InputField NameField;
 	public Text ScoreText;
-
-	#region Xml
+	
 	public Scores LoadedScores = new Scores();
 	public class Scores
 	{
@@ -66,7 +65,7 @@ public class HighScoreManager : MonoBehaviour
 		int? desiredIndex = null;
 		for (int i = 0; i < LoadedScores.scores.Length; i++)
 		{
-			if (LoadedScores.scores[i] == -1 || newScore < LoadedScores.scores[i])
+			if (LoadedScores.scores[i] == -1 || newScore > LoadedScores.scores[i])
 			{
 				desiredIndex = i;
 				break;
@@ -106,5 +105,4 @@ public class HighScoreManager : MonoBehaviour
 	{
 		ScoreText.text = LoadedScores.ToString();
 	}
-	#endregion
 }

@@ -42,10 +42,11 @@ public class HealthScript : MonoBehaviour
 	}
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
+		if (Invincible) return;
 		bool tagFound = false;
 		foreach (string tag in TagsThatHurt)
 		{
-			if (collision.gameObject.tag == tag || Invincible)
+			if (collision.gameObject.tag == tag)
 			{
 				tagFound = true;
 				break;

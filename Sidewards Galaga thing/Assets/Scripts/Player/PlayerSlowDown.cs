@@ -9,11 +9,13 @@ public class PlayerSlowDown : MonoBehaviour
 	public float SlowFactor = 0.5f;
 	public float MaxSlowTime;
 	public float EnergyRecoveredPerSecond = 1;
-	private float timeEnergy;
+	[SerializeField]private float timeEnergy;
+	private float normalFixedUpdate;
 
 	void Start ()
 	{
 		timeEnergy = MaxSlowTime;
+		normalFixedUpdate = Time.fixedDeltaTime;
 	}
 	
 	// Update is called once per frame
@@ -22,20 +24,22 @@ public class PlayerSlowDown : MonoBehaviour
 		if (Input.GetButtonDown("Slow") && timeEnergy / MaxSlowTime > 1f / 3f)
 		{
 			Time.timeScale = SlowFactor;
-			Time.fixedDeltaTime *= SlowFactor;
+			Time.fixedDeltaTime = Time.timeScale * normalFixedUpdate;
 		}
 		if (Input.GetButtonUp("Slow") || timeEnergy <= 0f)
 		{
 			Time.timeScale = 1f;
-			Time.fixedDeltaTime /= SlowFactor;
+			Time.fixedDeltaTime = normalFixedUpdate;
 		}
-		if(Time.timeScale != 1f)
+		if (Time.timeScale != 1f)
 		{
-			timeEnergy -= Time.deltaTime;
+			timeEnergy -= Time.deltaTime / Time.timeScale;
+			if (timeEnergy < 0) timeEnergy = 0;
 		}
 		else
 		{
-			timeEnergy += Time.deltaTime * EnergyRecoveredPerSecond;
+			float nextEnergyVal = timeEnergy + EnergyRecoveredPerSecond * Time.deltaTime;
+			timeEnergy = timeEnergy >= MaxSlowTime ? MaxSlowTime : nextEnergyVal;
 		}
 		EnergyBar.fillAmount = timeEnergy / MaxSlowTime;
 	}

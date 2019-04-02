@@ -47,16 +47,13 @@ public class HighScoreManager : MonoBehaviour
 		writer.Close();
 	}
 
-	public string GetScores()
+	public void GetScores()
 	{
 		string fileLocation = Application.dataPath + "\\" + scoreFileName;
 		// If there's nothing there, then stahp. 
-		if (!File.Exists(fileLocation)) return string.Empty;
+		if (!File.Exists(fileLocation)) return;
 
 		LoadedScores = JsonUtility.FromJson<Scores>(File.ReadAllText(fileLocation));
-		// If it's invalid, stahp. 
-		if (LoadedScores == null) return string.Empty;
-		return LoadedScores.ToString();
 	}
 
 	private void AddScore(string newPlayer, int newScore)
@@ -103,6 +100,7 @@ public class HighScoreManager : MonoBehaviour
 
 	public void ShowScores()
 	{
-		ScoreText.text = LoadedScores.ToString();
+		if(LoadedScores != null)
+			ScoreText.text = LoadedScores.ToString();
 	}
 }

@@ -8,7 +8,6 @@ public class PlayerDeathBehaviour : StateMachineBehaviour {
 	override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
 	{
 		animator.GetComponent<PlayerMovement>().CanMove = false;
-		animator.GetComponent<PlayerShoot>().CanShoot = false;
 	}
 
 	// OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks

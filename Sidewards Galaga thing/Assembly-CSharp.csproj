@@ -61,29 +61,23 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\OnSetActive.cs" />
-    <Compile Include="Assets\PlayerDeathBehaviour.cs" />
     <Compile Include="Assets\Scripts\BulletController.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyController.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemySpawner.cs" />
+    <Compile Include="Assets\Scripts\Enemy\WallController.cs" />
+    <Compile Include="Assets\Scripts\Enemy\WallSpawner.cs" />
     <Compile Include="Assets\Scripts\EnemyBehaviours\ExplodeBehaviour.cs" />
     <Compile Include="Assets\Scripts\EnemyBehaviours\FacePlayerBehaviour.cs" />
     <Compile Include="Assets\Scripts\EnemyBehaviours\GetIntoPositionBehaviour.cs" />
     <Compile Include="Assets\Scripts\EnemyBehaviours\KamiKazeBehaviour.cs" />
     <Compile Include="Assets\Scripts\EnemyBehaviours\ShootBehaviour.cs" />
     <Compile Include="Assets\Scripts\HealthScript.cs" />
-    <Compile Include="Assets\Scripts\Managers\DeathManager.cs" />
-    <Compile Include="Assets\Scripts\Managers\GameManager.cs" />
     <Compile Include="Assets\Scripts\Managers\HighScoreManager.cs" />
     <Compile Include="Assets\Scripts\Managers\MainManager.cs" />
-    <Compile Include="Assets\Scripts\Managers\MenuManager.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerAnimationManager.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerShoot.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerSlowDown.cs" />
-    <Compile Include="Assets\Scripts\WallController.cs" />
-    <Compile Include="Assets\Scripts\WallSpawner.cs" />
-    <None Include="Assets\highscores.txt" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>C:/Users/ckambouris/Documents/GitHub/Sidewards-Space-Game/Sidewards Galaga thing/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>

@@ -1,1 +1,0 @@
-{"players":["Brod","asddddd","asdasd","sdfghhj","fgfg","afasf","asdasd","asd","adsadasd","asdasd"],"scores":[56,31,30,22,18,16,15,13,14,19]}

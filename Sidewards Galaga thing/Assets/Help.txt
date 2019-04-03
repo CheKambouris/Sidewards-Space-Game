@@ -1,0 +1,9 @@
+Space Game Controls:
+
+Use the WASD or Arrow keys to move. 
+Use Space to slow time. Careful, it will deplete your energy bar. 
+Click to shoot, you can hold it down to shoot continuously. 
+
+Try to survive as long as possible! 
+
+To save your score, enter your name and save in the death screen. 

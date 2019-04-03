@@ -78,6 +78,8 @@
     <Compile Include="Assets\Scripts\Player\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerShoot.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerSlowDown.cs" />
+    <None Include="Assets\highscores.txt" />
+    <None Include="Assets\Help.txt" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>C:/Users/ckambouris/Documents/GitHub/Sidewards-Space-Game/Sidewards Galaga thing/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
